@@ -6,7 +6,7 @@ export default function ContactPage() {
           Contact
         </p>
         <h1 className="display mt-4 text-[48px] uppercase tracking-[0.02em] text-[#1C1C1C] sm:mt-6 sm:text-[96px] md:text-[120px] lg:text-[150px]">
-          Let’s Talk
+          <span className="hero-underline">Let’s Talk</span>
         </h1>
         <p className="mt-4 max-w-[46ch] text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:mt-6 sm:text-xs sm:tracking-[0.45em]">
           Tell us about your project and we’ll respond shortly.

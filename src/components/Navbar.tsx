@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className="relative z-40">
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 pt-8">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-6 pt-6 sm:flex-row sm:justify-between sm:gap-0 sm:pt-8">
         <Link
           href="/"
-          className="display text-[20px] uppercase tracking-[0.2em] text-[#1C1C1C] hover:no-underline"
+          className="display text-[18px] uppercase tracking-[0.18em] text-[#1C1C1C] hover:no-underline sm:text-[20px] sm:tracking-[0.2em]"
         >
           INNERSPACE
         </Link>
-        <nav className="flex items-center gap-10 text-[11px] uppercase tracking-[0.32em] text-[#7A7A7A]">
+        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:gap-10 sm:text-[11px] sm:tracking-[0.32em]">
           <Link
             href="/projects"
             className="hero-underline hover:text-[#1C1C1C] hover:no-underline"

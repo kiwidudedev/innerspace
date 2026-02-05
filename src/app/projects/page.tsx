@@ -2,25 +2,52 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: "straightline",
-      title: "Straightline Construction",
+      title: "Straightline Construction - Construction Company",
       image: "/straightlineconstruction.jpg",
       isPlaceholder: false,
       fitClass: "object-cover object-[2%_center]",
     },
     {
       id: "placeholder-1",
-      title: "Project Placeholder",
-      image: "",
-      isPlaceholder: true,
+      title: "Stirling & Stone - Architecture Firm",
+      image: "/Stirling%20%26%20Stone.jpg",
+      isPlaceholder: false,
+      fitClass: "object-contain inset-0",
     },
     {
       id: "placeholder-2",
+      title: "Floatly - Ecommerce website",
+      image: "/Floatly.jpg",
+      isPlaceholder: false,
+      fitClass: "object-contain inset-0",
+    },
+    {
+      id: "placeholder-5",
+      title: "Social Sundee - Marketing Agency",
+      image: "/Social%20Sundee.jpg",
+      isPlaceholder: false,
+      fitClass: "object-contain inset-0",
+    },
+    {
+      id: "placeholder-6",
       title: "Project Placeholder",
       image: "",
       isPlaceholder: true,
     },
     {
-      id: "placeholder-5",
+      id: "placeholder-7",
+      title: "Project Placeholder",
+      image: "",
+      isPlaceholder: true,
+    },
+    {
+      id: "placeholder-8",
+      title: "Project Placeholder",
+      image: "",
+      isPlaceholder: true,
+    },
+    {
+      id: "placeholder-9",
       title: "Project Placeholder",
       image: "",
       isPlaceholder: true,
@@ -38,7 +65,7 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <div className="mt-10 grid w-full max-w-[720px] grid-cols-1 gap-4 sm:mt-14 sm:gap-5 lg:mt-20 lg:gap-6 mx-auto">
+      <div className="mx-auto mt-10 grid w-full max-w-[1100px] grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-20 lg:gap-6">
         {projects.map((project) => (
           <div
             key={project.id}

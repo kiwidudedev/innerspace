@@ -1,11 +1,11 @@
 export default function ProjectsPage() {
   const projects = [
     {
-      id: "straightline",
-      title: "Straightline Construction - Construction Company",
-      image: "/straightlineconstruction.jpg",
+      id: "placeholder-2",
+      title: "Lombok Surf School - Booking Engine",
+      image: "/Lombok%20Surf%20School.jpg",
       isPlaceholder: false,
-      fitClass: "object-cover object-[2%_center]",
+      fitClass: "object-contain inset-0",
     },
     {
       id: "placeholder-1",
@@ -15,42 +15,32 @@ export default function ProjectsPage() {
       fitClass: "object-contain inset-0",
     },
     {
-      id: "placeholder-2",
+      id: "straightline",
+      title: "Straightline Construction - Construction Company",
+      image: "/straightlineconstruction.jpg",
+      isPlaceholder: false,
+      fitClass: "object-cover object-[2%_center]",
+    },
+    {
+      id: "placeholder-5",
+      title: "Salty Beast - Ecommerce website",
+      image: "/Salty%20Beast.jpg",
+      isPlaceholder: false,
+      fitClass: "object-contain inset-0",
+    },
+    {
+      id: "placeholder-6",
       title: "Floatly - Ecommerce website",
       image: "/Floatly.jpg",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
     {
-      id: "placeholder-5",
+      id: "placeholder-7",
       title: "Social Sundee - Marketing Agency",
       image: "/Social%20Sundee.jpg",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
-    },
-    {
-      id: "placeholder-6",
-      title: "Project Placeholder",
-      image: "",
-      isPlaceholder: true,
-    },
-    {
-      id: "placeholder-7",
-      title: "Project Placeholder",
-      image: "",
-      isPlaceholder: true,
-    },
-    {
-      id: "placeholder-8",
-      title: "Project Placeholder",
-      image: "",
-      isPlaceholder: true,
-    },
-    {
-      id: "placeholder-9",
-      title: "Project Placeholder",
-      image: "",
-      isPlaceholder: true,
     },
   ];
 
@@ -84,11 +74,7 @@ export default function ProjectsPage() {
                   alt={project.title}
                   className={`absolute inset-0 h-full w-full grayscale-[85%] opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 ${project.fitClass ?? "object-cover object-center"}`}
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent px-4 pb-3 pt-8 text-left sm:px-5 sm:pb-4 sm:pt-10">
-                  <div className="text-[10px] uppercase tracking-[0.28em] text-white/90 sm:text-xs sm:tracking-[0.35em]">
-                    {project.title}
-                  </div>
-                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent px-4 pb-3 pt-8 text-left sm:px-5 sm:pb-4 sm:pt-10" />
               </div>
             )}
           </div>

@@ -5,10 +5,25 @@ export default function AboutUsPage() {
         <h1 className="display text-[48px] uppercase tracking-[0.02em] text-[#1C1C1C] sm:text-[96px] md:text-[120px] lg:text-[150px]">
           <span className="hero-underline">Our Approach</span>
         </h1>
-        <p className="mt-4 max-w-[60ch] text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:mt-6 sm:text-xs sm:tracking-[0.45em]">
-          A studio focused on thoughtful design, clean code, and durable digital
-          products.
-        </p>
+        <div className="mt-4 w-full max-w-[92vw] border-y border-black py-3 sm:mt-6 sm:max-w-[1000px]">
+          <p className="text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:text-xs sm:tracking-[0.45em]">
+            A studio focused on thoughtful design, clean code, and durable
+            digital products.
+          </p>
+          <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:text-xs sm:tracking-[0.45em]">
+            Innerspace is a product-focused web and app studio.
+            <br />
+            <br />
+            We design and build digital products with clarity, restraint, and
+            long-term durability — from high-end marketing websites to custom
+            applications and internal tools.
+            <br />
+            <br />
+            Unlike traditional agencies, we work hands-on from strategy through
+            to code, ensuring every detail serves a purpose and nothing is built
+            without intent.
+          </p>
+        </div>
       </div>
     </section>
   );

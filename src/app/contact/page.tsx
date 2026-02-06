@@ -8,14 +8,14 @@ export default function ContactPage() {
         <h1 className="display mt-4 text-[48px] uppercase tracking-[0.02em] text-[#1C1C1C] sm:mt-6 sm:text-[96px] md:text-[120px] lg:text-[150px]">
           <span className="hero-underline">Let’s Talk</span>
         </h1>
-        <p className="mt-4 max-w-[46ch] text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:mt-6 sm:text-xs sm:tracking-[0.45em]">
+        <p className="mt-4 max-w-[90vw] text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:mt-6 sm:max-w-[46ch] sm:text-xs sm:tracking-[0.45em]">
           Tell us about your project and we’ll respond shortly.
         </p>
         <a
-          href="mailto:hello@innerspace.studio"
+          href="mailto:hello@innerspace.nz"
           className="mt-8 text-[11px] uppercase tracking-[0.3em] text-[#1C1C1C] hero-underline sm:mt-10 sm:text-sm sm:tracking-[0.35em]"
         >
-          hello@innerspace.studio
+          hello@innerspace.nz
         </a>
       </div>
     </section>

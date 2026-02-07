@@ -12,6 +12,9 @@ const archivoBlack = Archivo_Black({
 
 export const metadata: Metadata = {
   title: "Innerspace",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -66,7 +66,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <footer className="mx-auto max-w-[1440px] px-6 pb-10 pt-6 text-center text-[10px] uppercase tracking-[0.35em] text-[#7A7A7A]/70 sm:text-xs sm:tracking-[0.45em]">
-          Web design &amp; development studio — New Zealand
+          Website &amp; app design studio — New Zealand
         </footer>
       </body>
     </html>

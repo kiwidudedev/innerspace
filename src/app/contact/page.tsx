@@ -2,7 +2,7 @@ export default function ContactPage() {
   return (
     <section className="mx-auto flex min-h-[calc(100vh-140px)] max-w-[1440px] flex-col px-6 pb-16 pt-8 sm:pt-6">
       <div className="flex flex-1 flex-col items-center justify-center text-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#7A7A7A] sm:text-xs sm:tracking-[0.5em]">
+        <p className="text-[10px] uppercase tracking-[0.35em] text-[#7A7A7A] sm:text-xs sm:tracking-[0.5em]">
           Contact
         </p>
         <h1 className="display mt-4 text-[48px] uppercase tracking-[0.02em] text-[#1C1C1C] sm:mt-6 sm:text-[96px] md:text-[120px] lg:text-[150px]">

@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Progressive Web Design & Development Studio",
+  description:
+    "Innerspace designs and builds modern websites, web apps, and UI systems for New Zealand businesses, focused on performance, clarity, and growth.",
+};
+
 export default function Home() {
   return (
     <section className="mx-auto flex min-h-[calc(100vh-140px)] max-w-[1440px] flex-col px-6 pb-16 pt-8 sm:pt-6">
@@ -9,7 +17,7 @@ export default function Home() {
           <span className="hero-underline">Innerspace</span>
         </h1>
         <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-[#7A7A7A] sm:mt-6 sm:text-xs sm:tracking-[0.45em]">
-          A Progressive Web Development Studio
+          A Progressive Web Design & Development Studio Based in New Zealand
         </p>
       </div>
     </section>

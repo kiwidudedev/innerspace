@@ -4,6 +4,7 @@ export default function ProjectsPage() {
       id: "placeholder-2",
       title: "Lombok Surf School - Booking Engine",
       image: "/Lombok%20Surf%20School.jpg",
+      url: "https://lombok-surf-school.vercel.app/",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
@@ -11,6 +12,7 @@ export default function ProjectsPage() {
       id: "placeholder-1",
       title: "Stirling & Stone - Architecture Firm",
       image: "/Stirling%20%26%20Stone.jpg",
+      url: "https://sterling-stone-two.vercel.app/",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
@@ -56,29 +58,45 @@ export default function ProjectsPage() {
       </div>
 
       <div className="mx-auto mt-10 grid w-full max-w-[1100px] grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-20 lg:gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
-          >
-            {project.isPlaceholder ? (
-              <div className="flex aspect-[16/9] w-full items-center justify-center bg-[var(--bg)]">
-                <div className="text-[9px] uppercase tracking-[0.3em] text-[#9A9A9A] sm:text-[10px] sm:tracking-[0.35em]">
-                  Coming Soon
-                </div>
+        {projects.map((project) => {
+          const cardContent = project.isPlaceholder ? (
+            <div className="flex aspect-[16/9] w-full items-center justify-center bg-[var(--bg)]">
+              <div className="text-[9px] uppercase tracking-[0.3em] text-[#9A9A9A] sm:text-[10px] sm:tracking-[0.35em]">
+                Coming Soon
               </div>
-            ) : (
-              <div className="relative aspect-[16/9] w-full bg-[var(--bg)]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={`absolute inset-0 h-full w-full grayscale-[85%] opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 ${project.fitClass ?? "object-cover object-center"}`}
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent px-4 pb-3 pt-8 text-left sm:px-5 sm:pb-4 sm:pt-10" />
-              </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ) : (
+            <div className="relative aspect-[16/9] w-full bg-[var(--bg)]">
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`absolute inset-0 h-full w-full grayscale-[85%] opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 ${project.fitClass ?? "object-cover object-center"}`}
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent px-4 pb-3 pt-8 text-left sm:px-5 sm:pb-4 sm:pt-10" />
+            </div>
+          );
+
+          if (project.url) {
+            return (
+              <a
+                key={project.id}
+                href={project.url}
+                className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
+              >
+                {cardContent}
+              </a>
+            );
+          }
+
+          return (
+            <div
+              key={project.id}
+              className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
+            >
+              {cardContent}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

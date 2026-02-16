@@ -45,10 +45,11 @@ export default function ProjectsPage() {
       fitClass: "object-contain inset-0",
     },
   ];
+  const visibleProjects = projects.slice(0, 4);
 
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-140px)] max-w-[1440px] flex-col px-4 pb-16 pt-8 sm:px-6 sm:pt-6">
-      <div className="flex flex-1 flex-col items-center justify-center text-center">
+    <section className="flex min-h-[calc(100vh-140px)] w-full flex-col pb-16 pt-8 sm:pt-6">
+      <div className="flex flex-1 translate-y-[35px] flex-col items-center justify-center px-4 text-center sm:px-6">
         <h1 className="display text-[48px] uppercase tracking-[0.02em] text-[#1C1C1C] sm:text-[96px] md:text-[120px] lg:text-[150px]">
           <span className="hero-underline">Projects</span>
         </h1>
@@ -57,8 +58,8 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 grid w-full max-w-[1100px] grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-20 lg:gap-6">
-        {projects.map((project) => {
+      <div className="mt-10 grid w-full grid-cols-1 gap-4 px-[50px] sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-20 lg:gap-6">
+        {visibleProjects.map((project) => {
           const cardContent = project.isPlaceholder ? (
             <div className="flex aspect-[16/9] w-full items-center justify-center bg-[var(--bg)]">
               <div className="text-[9px] uppercase tracking-[0.3em] text-[#9A9A9A] sm:text-[10px] sm:tracking-[0.35em]">

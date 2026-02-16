@@ -19,7 +19,7 @@ export default function ProjectsPage() {
     {
       id: "straightline",
       title: "Straightline Construction - Construction Company",
-      image: "/straightlineconstruction.jpg",
+      image: "/fitterpals.jpg",
       isPlaceholder: false,
       fitClass: "object-cover object-[2%_center]",
     },

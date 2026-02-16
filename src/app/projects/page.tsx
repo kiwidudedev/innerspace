@@ -58,7 +58,7 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <div className="mt-10 grid w-full grid-cols-1 gap-4 px-[50px] sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:mt-20 lg:gap-6">
+      <div className="mt-10 grid w-full grid-cols-1 gap-4 px-5 sm:mt-14 sm:grid-cols-2 sm:gap-5 sm:px-[50px] lg:mt-20 lg:gap-6">
         {visibleProjects.map((project) => {
           const cardContent = project.isPlaceholder ? (
             <div className="flex aspect-[16/9] w-full items-center justify-center bg-[var(--bg)]">

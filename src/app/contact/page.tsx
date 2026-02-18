@@ -6,22 +6,50 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const subject = name.trim()
-      ? `New project enquiry from ${name.trim()}`
-      : "New project enquiry";
-    const body = [
-      `Name: ${name.trim() || "-"}`,
-      `Email: ${email.trim() || "-"}`,
-      "",
-      "Message:",
-      message.trim() || "-",
-    ].join("\n");
+    if (status === "submitting") return;
 
-    window.location.href = `mailto:hello@innerspace.nz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
+
+      if (!response.ok) {
+        throw new Error(payload?.error || "Could not send message.");
+      }
+
+      setName("");
+      setEmail("");
+      setMessage("");
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Could not send message. Please try again."
+      );
+    }
   };
 
   return (
@@ -47,6 +75,7 @@ export default function ContactPage() {
             <input
               id="name"
               type="text"
+              required
               value={name}
               onChange={(event) => setName(event.target.value)}
               placeholder="NAME"
@@ -59,6 +88,7 @@ export default function ContactPage() {
             <input
               id="email"
               type="email"
+              required
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="EMAIL"
@@ -72,6 +102,7 @@ export default function ContactPage() {
           </label>
           <textarea
             id="message"
+            required
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             placeholder="MESSAGE"
@@ -82,11 +113,22 @@ export default function ContactPage() {
           <div className="mt-4 flex sm:mt-5 sm:justify-end">
             <button
               type="submit"
+              disabled={status === "submitting"}
               className="min-h-[48px] w-full border-2 border-[#1C1C1C] bg-transparent px-8 py-3 text-center text-[12px] uppercase tracking-[0.16em] text-[#1C1C1C] transition-colors duration-200 hover:bg-[#1C1C1C] hover:text-[var(--bg)] sm:w-auto sm:min-w-[160px] sm:text-[11px] sm:tracking-[0.2em]"
             >
-              Submit
+              {status === "submitting" ? "Sending..." : "Submit"}
             </button>
           </div>
+          {status === "success" ? (
+            <p className="mt-3 text-[10px] uppercase tracking-[0.22em] text-[#1C1C1C]">
+              Message sent.
+            </p>
+          ) : null}
+          {status === "error" ? (
+            <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[#9F2B2B]">
+              {errorMessage}
+            </p>
+          ) : null}
         </form>
 
         <a

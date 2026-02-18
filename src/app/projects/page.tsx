@@ -24,6 +24,14 @@ export default function ProjectsPage() {
       fitClass: "object-cover object-[2%_center]",
     },
     {
+      id: "fitterpals-landing",
+      title: "FitterPals - Landing Page",
+      image: "/fitterpalslanding.jpg",
+      url: "https://fitterpals.app/",
+      isPlaceholder: false,
+      fitClass: "object-cover object-center",
+    },
+    {
       id: "placeholder-5",
       title: "Salty Beast - Ecommerce website",
       image: "/Salty%20Beast.jpg",
@@ -45,7 +53,7 @@ export default function ProjectsPage() {
       fitClass: "object-contain inset-0",
     },
   ];
-  const visibleProjects = projects.slice(0, 4);
+  const visibleProjects = projects.slice(0, 5);
 
   return (
     <section className="flex min-h-[calc(100vh-140px)] w-full flex-col pb-16 pt-8 sm:pt-6">
@@ -82,6 +90,8 @@ export default function ProjectsPage() {
               <a
                 key={project.id}
                 href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
               >
                 {cardContent}

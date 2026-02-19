@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function ProjectsPage() {
   const projects = [
     {
       id: "placeholder-2",
       title: "Lombok Surf School - Booking Engine",
       image: "/Lombok%20Surf%20School.jpg",
-      url: "https://lombok-surf-school.vercel.app/",
+      href: "https://lombok-surf-school.vercel.app/",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
@@ -12,22 +14,15 @@ export default function ProjectsPage() {
       id: "placeholder-1",
       title: "Stirling & Stone - Architecture Firm",
       image: "/Stirling%20%26%20Stone.jpg",
-      url: "https://sterling-stone-two.vercel.app/",
+      href: "https://sterling-stone-two.vercel.app/",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
-    },
-    {
-      id: "straightline",
-      title: "Straightline Construction - Construction Company",
-      image: "/fitterpals.jpg",
-      isPlaceholder: false,
-      fitClass: "object-cover object-[2%_center]",
     },
     {
       id: "fitterpals-landing",
       title: "FitterPals - Landing Page",
       image: "/fitterpalslanding.jpg",
-      url: "https://fitterpals.app/",
+      href: "https://fitterpals.app/",
       isPlaceholder: false,
       fitClass: "object-cover object-center",
     },
@@ -35,20 +30,6 @@ export default function ProjectsPage() {
       id: "placeholder-5",
       title: "Salty Beast - Ecommerce website",
       image: "/Salty%20Beast.jpg",
-      isPlaceholder: false,
-      fitClass: "object-contain inset-0",
-    },
-    {
-      id: "placeholder-6",
-      title: "Floatly - Ecommerce website",
-      image: "/Floatly.jpg",
-      isPlaceholder: false,
-      fitClass: "object-contain inset-0",
-    },
-    {
-      id: "placeholder-7",
-      title: "Social Sundee - Marketing Agency",
-      image: "/Social%20Sundee.jpg",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
@@ -85,17 +66,31 @@ export default function ProjectsPage() {
             </div>
           );
 
-          if (project.url) {
+          if (project.href) {
+            const isExternal = project.href.startsWith("http");
+
+            if (isExternal) {
+              return (
+                <a
+                  key={project.id}
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+
             return (
-              <a
+              <Link
                 key={project.id}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={project.href}
                 className="group relative overflow-hidden rounded-lg bg-[var(--bg)] shadow-[0_10px_30px_rgba(0,0,0,0.06)] sm:rounded-2xl"
               >
                 {cardContent}
-              </a>
+              </Link>
             );
           }
 

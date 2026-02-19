@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       id: "placeholder-1",
       title: "Stirling & Stone - Architecture Firm",
       image: "/Stirling%20%26%20Stone.jpg",
-      href: "https://sterling-stone-two.vercel.app/",
+      href: "/projects/stirling-stone",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },

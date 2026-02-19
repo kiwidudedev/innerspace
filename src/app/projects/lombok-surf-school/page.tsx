@@ -75,7 +75,7 @@ export default function LombokSurfSchoolCaseStudyPage() {
               alt={card.alt}
               fill
               sizes="(min-width: 1160px) 1160px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 1.5rem)"
-              className="object-cover"
+              className="object-contain bg-[#ECECEC]"
             />
           </div>
         </article>

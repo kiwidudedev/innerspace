@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import SiteFooter from "../components/SiteFooter";
 
 const archivoBlack = Archivo_Black({
   weight: "400",
@@ -65,9 +66,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main>{children}</main>
-        <footer className="mx-auto max-w-[1440px] px-6 pb-10 pt-6 text-center text-[10px] uppercase tracking-[0.35em] text-[#7A7A7A]/70 sm:text-xs sm:tracking-[0.45em]">
-          Website &amp; app design studio — New Zealand
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectsPage() {
   const projects = [
@@ -6,7 +7,7 @@ export default function ProjectsPage() {
       id: "placeholder-2",
       title: "Lombok Surf School - Booking Engine",
       image: "/Lombok%20Surf%20School.jpg",
-      href: "https://lombok-surf-school.vercel.app/",
+      href: "/projects/lombok-surf-school",
       isPlaceholder: false,
       fitClass: "object-contain inset-0",
     },
@@ -57,9 +58,11 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="relative aspect-[16/9] w-full bg-[var(--bg)]">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
                 className={`absolute inset-0 h-full w-full grayscale-[85%] opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 ${project.fitClass ?? "object-cover object-center"}`}
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent px-4 pb-3 pt-8 text-left sm:px-5 sm:pb-4 sm:pt-10" />

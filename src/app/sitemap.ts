@@ -17,7 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://innerspace.nz/about",
+      url: "https://innerspace.nz/projects/lombok-surf-school",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://innerspace.nz/about-us",
       lastModified,
       changeFrequency: "monthly",
       priority: 0.6,

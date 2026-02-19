@@ -69,7 +69,7 @@ export default function LombokSurfSchoolCaseStudyPage() {
           key={card.alt}
           className="mx-auto mt-5 max-w-[1160px] overflow-hidden border border-[#A9A9A9] bg-[var(--bg)] sm:mt-8"
         >
-          <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[16/7]">
+          <div className="relative aspect-[16/7] w-full">
             <Image
               src={card.src}
               alt={card.alt}
